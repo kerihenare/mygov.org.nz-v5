@@ -1,7 +1,7 @@
 import type { VFC } from 'react';
 import styled from 'styled-components';
 
-import { Container } from '~/components/atoms/container';
+import { Container } from '~/components/atoms/container/container';
 
 const Wrapper = styled.footer`
   align-items: center;

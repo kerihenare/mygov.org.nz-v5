@@ -2,6 +2,7 @@ import { VFC } from 'react';
 import styled from 'styled-components';
 
 import logo from './logo.svg';
+import { Navigation } from './navigation';
 
 const Brand = styled.a`
   border-radius: 0 0 0.25rem 0.25rem;
@@ -75,6 +76,7 @@ export const Header: VFC = () => (
       <Brand href="/" rel="home">
         <img src={logo} alt="MyGov" width={64} height={23} />
       </Brand>
+      <Navigation />
     </Container>
   </Wrapper>
 );

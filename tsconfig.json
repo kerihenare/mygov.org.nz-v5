@@ -20,5 +20,5 @@
     "target": "ESNext"
   },
   "exclude": ["build", "dist", "node_modules", "public/build"],
-  "include": ["remix.env.d.ts", "styled.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["types/*.d.ts", "**/*.ts", "**/*.tsx"]
 }
