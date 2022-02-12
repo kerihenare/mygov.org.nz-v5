@@ -1,0 +1,24 @@
+import { FC, Fragment } from 'react';
+import styled from 'styled-components';
+
+import { Footer } from './footer';
+import { GlobalStyle } from './global-style';
+import { Header } from './header/header';
+
+const Main = styled.main`
+  flex: 1;
+  padding: 1.5rem 0;
+`;
+
+/**
+ *
+ * @param props
+ */
+export const Layout: FC = (props) => (
+  <Fragment>
+    <GlobalStyle />
+    <Header />
+    <Main id="content">{props.children}</Main>
+    <Footer />
+  </Fragment>
+);

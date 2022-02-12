@@ -1,21 +1,36 @@
-import { renderToString } from "react-dom/server";
-import { RemixServer } from "remix";
-import type { EntryContext } from "remix";
+import { renderToString } from 'react-dom/server';
+import { RemixServer } from 'remix';
+import type { EntryContext } from 'remix';
+import { ServerStyleSheet } from 'styled-components';
 
+/**
+ *
+ * @param request
+ * @param responseStatusCode
+ * @param responseHeaders
+ * @param remixContext
+ */
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext
 ) {
+  const sheet = new ServerStyleSheet();
+
   const markup = renderToString(
-    <RemixServer context={remixContext} url={request.url} />
+    sheet.collectStyles(
+      <RemixServer context={remixContext} url={request.url} />
+    )
   );
 
-  responseHeaders.set("Content-Type", "text/html");
+  const styles = sheet.getStyleTags();
+  const body = '<!DOCTYPE html>' + markup.replace('__STYLES__', styles);
 
-  return new Response("<!DOCTYPE html>" + markup, {
-    status: responseStatusCode,
-    headers: responseHeaders
+  responseHeaders.set('Content-Type', 'text/html');
+
+  return new Response(body, {
+    headers: responseHeaders,
+    status: responseStatusCode
   });
 }

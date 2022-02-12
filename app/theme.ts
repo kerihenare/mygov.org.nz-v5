@@ -1,0 +1,52 @@
+import type { DefaultTheme } from 'styled-components';
+
+export const lightTheme: DefaultTheme = {
+  border: '#eee',
+  checkboxBackground: '#28a745',
+  checkboxDark: '#23923d',
+  checkboxInactive: '#dee2e6',
+  checkboxLight: '#2dbc4e',
+  footerBackground: '#231f20',
+  footerLink: '#999',
+  footerLinkHover: '#ccc',
+  form: '#f8f8f8',
+  headerBackground: '#ff8300',
+  headerLink: '#fff',
+  inputBorder: '#ced4da',
+  inputOutline: 'rgba(0, 123, 255, 0.25)',
+  link: '#d43900',
+  negative: '#dc3545',
+  pageBackground: '#fff',
+  positive: '#28a745',
+  selectBorderFocus: '#a2bee4',
+  success: '#eaf6ec',
+  successAlt: '#e7f4ea',
+  suffixBackground: '#e9ecef',
+  suffixLight: 'rgba(248, 249, 250, 0.5)',
+  tableAlt: '#fcfcfc',
+  text: '#212529'
+};
+
+export const darkTheme: DefaultTheme = {
+  ...lightTheme,
+  border: '#2a2a2a',
+  checkboxBackground: '#2e3d2e',
+  checkboxDark: '#2e3d2e',
+  checkboxInactive: '#111',
+  checkboxLight: '#334233',
+  form: '#2e2e2e',
+  headerBackground: '#d43900',
+  inputBorder: '#191919',
+  inputOutline: 'rgba(0, 123, 255, 0.2)',
+  link: '#ff8300',
+  negative: '#f44336',
+  pageBackground: '#333',
+  positive: '#00c853',
+  selectBorderFocus: '#1c2d47',
+  success: '#334233',
+  successAlt: '#2e3d2e',
+  suffixBackground: '#222',
+  suffixLight: '#2a2a2a',
+  tableAlt: '#2f2f2f',
+  text: '#f5f8fa'
+};
