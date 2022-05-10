@@ -1,22 +1,33 @@
 export {};
 
 declare global {
-  type Year =
-    | '2020'
-    | '2017'
-    | '2014'
-    | '2011'
-    | '2008'
-    | '2005'
-    | '2002'
-    | '1999'
-    | '1996';
+  namespace Data {
+    type Year =
+      | '2020'
+      | '2017'
+      | '2014'
+      | '2011'
+      | '2008'
+      | '2005'
+      | '2002'
+      | '1999'
+      | '1996';
 
-  interface Election {
-    r: Array<[symbol, number] | [symbol, number, number]>;
+    interface ElectionRow {
+      electorates: number;
+      party: symbol;
+      seats: number;
+      votes: number;
+    }
+
+    interface ElectionResult {
+      rows: ElectionRow[];
+    }
+
+    type ElectionResults = Record<Year, ElectionResult>;
+
+    type Names = Record<symbol, string>;
+
+    type Swatches = Record<symbol, string>;
   }
-
-  type Elections = Record<Year, Election>;
-
-  type PartyMeta = Record<symbol, [string, string]>;
 }

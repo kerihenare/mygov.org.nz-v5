@@ -13,6 +13,7 @@ declare module 'styled-components' {
     form: string;
     headerBackground: string;
     headerLink: string;
+    headerText: string;
     inputBorder: string;
     inputOutline: string;
     link: string;
@@ -24,7 +25,10 @@ declare module 'styled-components' {
     successAlt: string;
     suffixBackground: string;
     suffixLight: string;
-    tableAlt: string;
+    tableAltBackground: string;
+    tableAltHover: string;
+    tableBackground: string;
+    tableHover: string;
     text: string;
   }
 }

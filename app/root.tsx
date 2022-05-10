@@ -1,12 +1,5 @@
-import type { VFC } from 'react';
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration
-} from 'remix';
+import type { FC } from 'react';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'remix';
 import type { MetaFunction } from 'remix';
 import { ThemeProvider } from 'styled-components';
 
@@ -16,14 +9,14 @@ import { lightTheme } from './theme';
 /**
  *
  */
-export const meta: MetaFunction = () => {
-  return { title: 'MyGov Aotearoa' };
-};
+export const meta: MetaFunction = () => ({
+  title: 'MyGov Aotearoa'
+});
 
 /**
  *
  */
-const Root: VFC = () => (
+const Root: FC = () => (
   <html lang="en-NZ">
     <head>
       <meta charSet="utf-8" />
@@ -40,7 +33,6 @@ const Root: VFC = () => (
         </Layout>
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </ThemeProvider>
   </html>

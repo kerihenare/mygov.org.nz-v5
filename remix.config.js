@@ -4,8 +4,8 @@
 module.exports = {
   appDirectory: 'app',
   assetsBuildDirectory: 'public/build',
+  cacheDirectory: './node_modules/.cache/remix',
   devServerBroadcastDelay: 1000,
-  ignoredRouteFiles: ['.*'],
   publicPath: '/build/',
   serverBuildDirectory: 'build',
   serverModuleFormat: 'esm',

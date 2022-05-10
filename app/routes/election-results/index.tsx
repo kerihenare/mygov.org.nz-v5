@@ -1,4 +1,5 @@
-import { VFC } from 'react';
+import type { FC } from 'react';
+import type { MetaFunction } from 'remix';
 
 import { ElectionResults } from '~/components/templates/election-results/election-results';
 import { elections } from '~/data/elections';
@@ -6,8 +7,13 @@ import { elections } from '~/data/elections';
 /**
  *
  */
-const Index: VFC = () => {
-  return <ElectionResults years={Object.keys(elections) as Year[]} />;
-};
+export const meta: MetaFunction = () => ({
+  title: 'General Election Results - MyGov Aotearoa'
+});
+
+/**
+ *
+ */
+const Index: FC = () => <ElectionResults results={elections} />;
 
 export default Index;

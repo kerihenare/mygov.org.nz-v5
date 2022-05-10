@@ -1,4 +1,4 @@
-import type { VFC } from 'react';
+import type { FC } from 'react';
 import styled from 'styled-components';
 
 import { Container } from '~/components/atoms/container/container';
@@ -28,7 +28,7 @@ const Wrapper = styled.footer`
 /**
  *
  */
-export const Footer: VFC = () => (
+export const Footer: FC = () => (
   <Wrapper>
     <Container>
       <a href="https://mygov.org.nz">mygov.org.nz</a>

@@ -1,4 +1,4 @@
-import type { VFC } from 'react';
+import type { FC } from 'react';
 import { NavLink } from 'remix';
 import styled from 'styled-components';
 
@@ -37,7 +37,7 @@ const Wrapper = styled.ul`
 /**
  *
  */
-export const Navigation: VFC = () => (
+export const Navigation: FC = () => (
   <Wrapper>
     <li>
       <NavLink to="/election-results">Election results</NavLink>

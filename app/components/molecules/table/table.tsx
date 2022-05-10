@@ -1,11 +1,12 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 
 interface TableProps {
-  withParties: boolean;
+  children: ReactNode;
 }
 
-const Wrapper = styled.table`
+export const Wrapper = styled.table`
+  background-color: ${(props) => props.theme.tableBackground};
   border-collapse: collapse;
   font-weight: bold;
   max-width: 100%;
@@ -42,7 +43,30 @@ const Wrapper = styled.table`
 
   tbody tr:nth-child(odd) td,
   tbody tr:nth-child(odd) th {
-    background-color: ${(props) => props.theme.tableAlt};
+    background-color: ${(props) => props.theme.tableAltBackground};
+  }
+
+  tr[data-href] td {
+    cursor: pointer;
+  }
+
+  tr[data-href] th {
+    color: ${(props) => props.theme.link};
+    cursor: pointer;
+  }
+
+  tbody tr[data-href]:focus td,
+  tbody tr[data-href]:hover td,
+  tbody tr[data-href]:focus th,
+  tbody tr[data-href]:hover th {
+    background-color: ${(props) => props.theme.tableHover};
+  }
+
+  tbody tr[data-href]:nth-child(odd):focus td,
+  tbody tr[data-href]:nth-child(odd):hover td,
+  tbody tr[data-href]:nth-child(odd):focus th,
+  tbody tr[data-href]:nth-child(odd):hover th {
+    background-color: ${(props) => props.theme.tableAltHover};
   }
 
   @media (max-width: 992px) {
@@ -52,37 +76,10 @@ const Wrapper = styled.table`
   }
 `;
 
-const WithPartiesWrapper = styled(Wrapper)`
-  @media (min-width: 576px) {
-    tbody th {
-      padding-left: 2.5rem;
-      position: relative;
-
-      &:before {
-        background: ${(props) => props.theme.border}
-          linear-gradient(0deg, rgba(0, 0, 0, 0.2), hsla(0, 0%, 100%, 0.05));
-        border-radius: 0.375rem;
-        box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
-        content: ' ';
-        height: 0.75rem;
-        left: 1rem;
-        margin-top: -0.375rem;
-        position: absolute;
-        top: 50%;
-        width: 0.75rem;
-      }
-    }
-  }
-`;
-
 /**
  *
  * @param props
  */
-export const Table: FC<TableProps> = (props) => {
-  return props.withParties ? (
-    <WithPartiesWrapper>{props.children}</WithPartiesWrapper>
-  ) : (
-    <Wrapper>{props.children}</Wrapper>
-  );
-};
+export const Table: FC<TableProps> = (props) => (
+  <Wrapper>{props.children}</Wrapper>
+);

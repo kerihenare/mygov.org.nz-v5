@@ -12,6 +12,6 @@ export const action: ActionFunction = () => {
 /**
  *
  */
-const Homepage: FC = () => null;
+const Tools: FC = () => null;
 
-export default Homepage;
+export default Tools;

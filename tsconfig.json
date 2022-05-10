@@ -17,7 +17,9 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true
   },
   "exclude": ["build", "dist", "node_modules", "public/build"],
   "include": ["types/*.d.ts", "**/*.ts", "**/*.tsx"]

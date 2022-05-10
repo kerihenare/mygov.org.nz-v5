@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 
 interface PageHeaderProps {
@@ -9,7 +9,7 @@ interface PageHeaderProps {
 const Wrapper = styled.header`
   h1 {
     border-bottom: 1px solid ${(props) => props.theme.border};
-    color: ${(props) => props.theme.link};
+    color: ${(props) => props.theme.headerText};
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 2.5rem;
     font-weight: 500;
@@ -34,7 +34,7 @@ const Wrapper = styled.header`
  *
  * @param props
  */
-export const PageHeader: VFC<PageHeaderProps> = (props) => (
+export const PageHeader: FC<PageHeaderProps> = (props) => (
   <Wrapper>
     <h1>{props.title}</h1>
     {props.description && <p>{props.description}</p>}

@@ -1,18 +1,22 @@
-import { VFC } from 'react';
+import type { FC } from 'react';
 import styled from 'styled-components';
 
 import logo from './logo.svg';
 import { Navigation } from './navigation';
 
 const Brand = styled.a`
-  border-radius: 0 0 0.25rem 0.25rem;
   display: inline-block;
   margin-left: -0.75rem;
   padding: 1.1875rem 0.75rem 0.75rem;
 
   &:focus {
-    background-color: ${(props) => props.theme.link};
+    background-color: ${(props) => props.theme.headerText};
     outline: 0 none;
+  }
+
+  a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: 0;
   }
 `;
 
@@ -32,7 +36,7 @@ const Container = styled.nav`
 `;
 
 const SkipToContent = styled.a`
-  background-color: ${(props) => props.theme.link};
+  background-color: ${(props) => props.theme.headerText};
   border: 0;
   clip: rect(0, 0, 0, 0);
   color: ${(props) => props.theme.headerLink};
@@ -69,7 +73,7 @@ const Wrapper = styled.header`
 /**
  *
  */
-export const Header: VFC = () => (
+export const Header: FC = () => (
   <Wrapper>
     <SkipToContent href="#content">Skip to the content</SkipToContent>
     <Container>

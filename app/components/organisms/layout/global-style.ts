@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     background-color: ${(props) => props.theme.pageBackground};
     color: ${(props) => props.theme.text};
-    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 400;
     height: 100%;

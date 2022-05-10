@@ -12,9 +12,10 @@ export const lightTheme: DefaultTheme = {
   form: '#f8f8f8',
   headerBackground: '#ff8300',
   headerLink: '#fff',
+  headerText: '#d43900',
   inputBorder: '#ced4da',
   inputOutline: 'rgba(0, 123, 255, 0.25)',
-  link: '#d43900',
+  link: '#2980b9',
   negative: '#dc3545',
   pageBackground: '#fff',
   positive: '#28a745',
@@ -23,7 +24,10 @@ export const lightTheme: DefaultTheme = {
   successAlt: '#e7f4ea',
   suffixBackground: '#e9ecef',
   suffixLight: 'rgba(248, 249, 250, 0.5)',
-  tableAlt: '#fcfcfc',
+  tableAltBackground: '#fcfcfc',
+  tableAltHover: '#e7ecf4',
+  tableBackground: '#fff',
+  tableHover: '#eaeef6',
   text: '#212529'
 };
 
@@ -47,6 +51,7 @@ export const darkTheme: DefaultTheme = {
   successAlt: '#2e3d2e',
   suffixBackground: '#222',
   suffixLight: '#2a2a2a',
-  tableAlt: '#2f2f2f',
+  tableAltBackground: '#2f2f2f',
+  tableBackground: '#333',
   text: '#f5f8fa'
 };
